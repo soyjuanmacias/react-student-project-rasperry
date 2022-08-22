@@ -1,23 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const encender = () => {
+    console.log('encender');
+  fetch('http://localhost:3800/encender', { mode: 'no-cors'})
+}
+const apagar = () => {
+  console.log('apagar');
+  fetch('http://localhost:3800/apagar', { mode: 'no-cors'})
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>React conexión raspberry</h1>
+      <button onClick={() => encender()}>Encender</button>
+      <button onClick={() => apagar()}>Apagar</button>
     </div>
   );
 }
